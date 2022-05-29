@@ -274,11 +274,11 @@ while(1){
 }
 }
 
-void heartbeat(){
+void heartbeat(void){
   if (HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox) != HAL_OK){
     Error_Handler();
   }
-  HAL_DELAY(250);
+  HAL_Delay(250);
   return;
 }
 /* USER CODE END 4 */
