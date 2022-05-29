@@ -48,9 +48,10 @@
 CAN_RxHeaderTypeDef rxHeader;
 CAN_TxHeaderTypeDef txHeader;
 uint8_t rxData[8] = {0,0,0,0,0,0,0,0};
+uint8_t txData[8] = {0,0,0,0,0,0,0,0};
 CAN_FilterTypeDef canfil;
-uint32_t canMailbox;
-uint8_t* Msg = &rxData;
+uint32_t canRxMailbox;
+uint32_t canTxMailbox;
 uint32_t RXID;
 uint32_t INSERTHERE; //This is a random variable that needs changing of both type and content. Only a dummy as the 0 state for the cyclic switching lights
 /* USER CODE END PV */
@@ -133,7 +134,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    heartbeat();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -180,7 +181,9 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan1){
-
+  if(HAL_CAN_GetRxMessage(&hcan, 0, &rxHeader, rxData) != HAL_OK){
+    Error_Handler();
+  }
 }
 
 void RBlinker(){
@@ -269,6 +272,14 @@ while(1){
     return;
   }
 }
+}
+
+void heartbeat(){
+  if (HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox) != HAL_OK){
+    Error_Handler();
+  }
+  HAL_DELAY(250);
+  return;
 }
 /* USER CODE END 4 */
 
