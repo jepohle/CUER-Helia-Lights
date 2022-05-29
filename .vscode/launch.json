@@ -3,7 +3,7 @@
         {
             "showDevDebugOutput": "parsed",
             "cwd": "${workspaceRoot}",
-            "executable": "./build/CANAnalyzer.elf",
+            "executable": "./build/HELIALights.elf",
             "name": "Debug STM32",
             "request": "launch",
             "type": "cortex-debug",
