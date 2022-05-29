@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
   27:Core/Src/main.c **** 
   28:Core/Src/main.c **** 
   29:Core/Src/main.c **** /* USER CODE END Includes */
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 2
 
 
   30:Core/Src/main.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
   84:Core/Src/main.c ****   /* USER CODE BEGIN Init */
   85:Core/Src/main.c **** 
   86:Core/Src/main.c **** 
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 3
 
 
   87:Core/Src/main.c ****   //initialise CAN filters
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  141:Core/Src/main.c **** 
  142:Core/Src/main.c **** /**
  143:Core/Src/main.c ****   * @brief System Clock Configuration
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 4
 
 
  144:Core/Src/main.c ****   * @retval None
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
   44              		.thumb
   45              		.thumb_func
   47              	RBlinker:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 5
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 5
 
 
   48              	.LFB126:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
   91              		.cfi_endproc
   92              	.LFE126:
   94              		.section	.text.LBlinker,"ax",%progbits
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 6
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 6
 
 
   95              		.align	1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  139 002e 08BD     		pop	{r3, pc}
  140              	.L11:
  141              		.align	2
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 7
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 7
 
 
  142              	.L10:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  193              		@ args = 0, pretend = 0, frame = 0
  194              		@ frame_needed = 0, uses_anonymous_args = 0
  195 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 8
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 8
 
 
  196              	.LCFI3:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  244              	.LFE130:
  246              		.section	.text.FogFR,"ax",%progbits
  247              		.align	1
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 9
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 9
 
 
  248              		.global	FogFR
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  297 0006 0248     		ldr	r0, .L26
  298 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
  299              	.LVL11:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 10
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 10
 
 
  230:Core/Src/main.c **** return;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  349              		.thumb_func
  351              	Day:
  352              	.LFB134:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 11
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 11
 
 
  238:Core/Src/main.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  248:Core/Src/main.c **** }
  399              		.loc 1 248 1 is_stmt 0 view .LVU53
  400 000e 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 12
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 12
 
 
  401              		.cfi_endproc
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  258:Core/Src/main.c **** }
  259:Core/Src/main.c **** }
  448              		.loc 1 259 1 is_stmt 0 view .LVU63
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 13
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 13
 
 
  449 0026 08BD     		pop	{r3, pc}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  498 0026 0A4B     		ldr	r3, .L44+4
  499 0028 9A42     		cmp	r2, r3
  500 002a EAD1     		bne	.L42
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 14
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 14
 
 
  267:Core/Src/main.c ****     HAL_GPIO_WritePin(RINDIC_GPIO_Port, RINDIC_Pin, RESET);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  540              	.LBB4:
  541              	.LBI4:
  542              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 15
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 15
 
 
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 16
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 16
 
 
   58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 17
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 17
 
 
  115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  566              		.thumb
  567              		.thumb_func
  569              	SystemClock_Config:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 18
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 18
 
 
  570              	.LFB124:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  610              		.loc 1 158 34 is_stmt 0 view .LVU96
  611 0026 0222     		movs	r2, #2
  612 0028 0D92     		str	r2, [sp, #52]
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 19
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 19
 
 
  159:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL2;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  648 004a 20B9     		cbnz	r0, .L53
  179:Core/Src/main.c **** 
  649              		.loc 1 179 1 view .LVU116
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 20
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 20
 
 
  650 004c 11B0     		add	sp, sp, #68
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  698 000c 8B61     		str	r3, [r1, #24]
   90:Core/Src/main.c ****   canfil.FilterIdHigh = 0;
  699              		.loc 1 90 3 is_stmt 1 view .LVU125
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 21
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 21
 
 
   90:Core/Src/main.c ****   canfil.FilterIdHigh = 0;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  103:Core/Src/main.c ****   txHeader.StdId = 0x030;
  734              		.loc 1 103 16 is_stmt 0 view .LVU146
  735 002a D360     		str	r3, [r2, #12]
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 22
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 22
 
 
  104:Core/Src/main.c ****   txHeader.ExtId = 0x02;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  775              		.loc 1 138 3 discriminator 1 view .LVU161
  133:Core/Src/main.c ****   {
  776              		.loc 1 133 9 discriminator 1 view .LVU162
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 23
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 23
 
 
  777 005c FEE7     		b	.L55
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  835              		.align	2
  836              		.set	.LANCHOR3,. + 0
  839              	txHeader:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 24
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 24
 
 
  840 0000 00000000 		.space	24
@@ -1405,71 +1405,71 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 1
  859              		.file 13 "Core/Inc/gpio.h"
  860              		.file 14 "Core/Inc/usart.h"
  861              		.file 15 "<built-in>"
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 25
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:20     .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:26     .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 HAL_CAN_RxFifo0MsgPendingCallback
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:41     .text.RBlinker:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:47     .text.RBlinker:00000000 RBlinker
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:89     .text.RBlinker:00000030 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:95     .text.LBlinker:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:101    .text.LBlinker:00000000 LBlinker
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:143    .text.LBlinker:00000030 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:149    .text.Brake:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:155    .text.Brake:00000000 Brake
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:178    .text.Brake:00000010 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:183    .text.BrakeR:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:189    .text.BrakeR:00000000 BrakeR
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:212    .text.BrakeR:00000010 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:217    .text.FogF:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:223    .text.FogF:00000000 FogF
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:247    .text.FogFR:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:253    .text.FogFR:00000000 FogFR
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:277    .text.FogR:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:283    .text.FogR:00000000 FogR
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:306    .text.FogR:00000010 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:311    .text.FogRR:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:317    .text.FogRR:00000000 FogRR
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:340    .text.FogRR:00000010 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:345    .text.Day:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:351    .text.Day:00000000 Day
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:375    .text.DayR:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:381    .text.DayR:00000000 DayR
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:405    .text.safe:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:411    .text.safe:00000000 safe
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:453    .text.safe:00000028 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:460    .text.Hazards:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:466    .text.Hazards:00000000 Hazards
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:519    .text.Hazards:0000004c $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:525    .text.Error_Handler:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:531    .text.Error_Handler:00000000 Error_Handler
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:563    .text.SystemClock_Config:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:569    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:670    .text.main:00000000 $t
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:676    .text.main:00000000 main
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:781    .text.main:00000060 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:800    .bss.INSERTHERE:00000000 INSERTHERE
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:806    .bss.RXID:00000000 RXID
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:845    .data.Msg:00000000 Msg
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:812    .bss.canMailbox:00000000 canMailbox
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:819    .bss.canfil:00000000 canfil
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:826    .bss.rxData:00000000 rxData
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:839    .bss.txHeader:00000000 txHeader
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:832    .bss.rxHeader:00000000 rxHeader
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:796    .bss.INSERTHERE:00000000 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:803    .bss.RXID:00000000 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:809    .bss.canMailbox:00000000 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:815    .bss.canfil:00000000 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:822    .bss.rxData:00000000 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:829    .bss.rxHeader:00000000 $d
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccwVlFKe.s 			page 26
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:20     .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:26     .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 HAL_CAN_RxFifo0MsgPendingCallback
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:41     .text.RBlinker:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:47     .text.RBlinker:00000000 RBlinker
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:89     .text.RBlinker:00000030 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:95     .text.LBlinker:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:101    .text.LBlinker:00000000 LBlinker
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:143    .text.LBlinker:00000030 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:149    .text.Brake:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:155    .text.Brake:00000000 Brake
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:178    .text.Brake:00000010 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:183    .text.BrakeR:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:189    .text.BrakeR:00000000 BrakeR
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:212    .text.BrakeR:00000010 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:217    .text.FogF:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:223    .text.FogF:00000000 FogF
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:247    .text.FogFR:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:253    .text.FogFR:00000000 FogFR
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:277    .text.FogR:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:283    .text.FogR:00000000 FogR
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:306    .text.FogR:00000010 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:311    .text.FogRR:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:317    .text.FogRR:00000000 FogRR
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:340    .text.FogRR:00000010 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:345    .text.Day:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:351    .text.Day:00000000 Day
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:375    .text.DayR:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:381    .text.DayR:00000000 DayR
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:405    .text.safe:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:411    .text.safe:00000000 safe
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:453    .text.safe:00000028 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:460    .text.Hazards:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:466    .text.Hazards:00000000 Hazards
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:519    .text.Hazards:0000004c $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:525    .text.Error_Handler:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:531    .text.Error_Handler:00000000 Error_Handler
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:563    .text.SystemClock_Config:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:569    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:670    .text.main:00000000 $t
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:676    .text.main:00000000 main
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:781    .text.main:00000060 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:800    .bss.INSERTHERE:00000000 INSERTHERE
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:806    .bss.RXID:00000000 RXID
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:845    .data.Msg:00000000 Msg
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:812    .bss.canMailbox:00000000 canMailbox
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:819    .bss.canfil:00000000 canfil
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:826    .bss.rxData:00000000 rxData
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:839    .bss.txHeader:00000000 txHeader
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:832    .bss.rxHeader:00000000 rxHeader
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:796    .bss.INSERTHERE:00000000 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:803    .bss.RXID:00000000 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:809    .bss.canMailbox:00000000 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:815    .bss.canfil:00000000 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:822    .bss.rxData:00000000 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:829    .bss.rxHeader:00000000 $d
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccZToQSW.s 			page 26
 
 
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:835    .bss.txHeader:00000000 $d
-C:\Users\User\AppData\Local\Temp\ccwVlFKe.s:842    .data.Msg:00000000 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:835    .bss.txHeader:00000000 $d
+C:\Users\User\AppData\Local\Temp\ccZToQSW.s:842    .data.Msg:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_TogglePin
