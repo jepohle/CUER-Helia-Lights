@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +45,14 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+CAN_RxHeaderTypeDef rxHeader;
+CAN_TxHeaderTypeDef txHeader;
+uint8_t rxData[8] = {0,0,0,0,0,0,0,0};
+CAN_FilterTypeDef canfil;
+uint32_t canMailbox;
+uint8_t* Msg = &rxData;
+uint32_t RXID;
+uint32_t INSERTHERE; //This is a random variable that needs changing of both type and content. Only a dummy as the 0 state for the cyclic switching lights
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -74,6 +82,34 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+
+
+  //initialise CAN filters
+  canfil.FilterBank = 0;
+  canfil.FilterMode = CAN_FILTERMODE_IDMASK;
+  canfil.FilterFIFOAssignment = CAN_RX_FIFO0;
+  canfil.FilterIdHigh = 0;
+  canfil.FilterIdLow = 0;
+  canfil.FilterMaskIdHigh = 0;
+  canfil.FilterMaskIdLow = 0;
+  canfil.FilterScale = CAN_FILTERSCALE_32BIT;
+  canfil.FilterActivation = ENABLE;
+  canfil.SlaveStartFilterBank = 14;
+
+
+  //setup CAN header for transmitting messages
+  txHeader.DLC = 8; // Number of bites to be transmitted max- 8
+  txHeader.IDE = CAN_ID_STD;
+  txHeader.RTR = CAN_RTR_DATA;
+  txHeader.StdId = 0x030;
+  txHeader.ExtId = 0x02;
+  txHeader.TransmitGlobalTime = DISABLE;
+
+
+  //initialize CAN bus
+  HAL_CAN_ConfigFilter(&hcan, &canfil);
+  HAL_CAN_Start(&hcan);
+  HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
 
   /* USER CODE END Init */
 
@@ -143,7 +179,97 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan1){
 
+}
+
+void RBlinker(){
+while(1){
+  HAL_GPIO_TogglePin(RINDIC_GPIO_Port, RINDIC_Pin);
+  HAL_Delay(750);
+  if(rxData == INSERTHERE){
+    HAL_GPIO_WritePin(RINDIC_GPIO_Port, RINDIC_Pin, RESET);
+    return;
+  }
+}
+}
+
+void LBlinker(){
+while(1){
+  HAL_GPIO_TogglePin(LINDIC_GPIO_Port, LINDIC_Pin);
+  HAL_Delay(750);
+  if(rxData == INSERTHERE){
+    HAL_GPIO_WritePin(LINDIC_GPIO_Port, LINDIC_Pin, RESET);
+    return;
+  }
+}
+}
+
+void Brake(){
+HAL_GPIO_WritePin(BRAKE_GPIO_Port, BRAKE_Pin, SET);
+return;
+}
+
+void BrakeR(){
+HAL_GPIO_WritePin(BRAKE_GPIO_Port, BRAKE_Pin, RESET);
+return;
+}
+
+void FogF(){
+HAL_GPIO_WritePin(FRONTFOG_GPIO_Port, FRONTFOG_Pin, SET);
+return;
+}
+
+void FogFR(){
+HAL_GPIO_WritePin(FRONTFOG_GPIO_Port, FRONTFOG_Pin, RESET);
+return;
+}
+
+void FogR(){
+HAL_GPIO_WritePin(REARFOG_GPIO_Port, REARFOG_Pin, SET);
+return;
+}
+
+
+void FogRR(){
+HAL_GPIO_WritePin(REARFOG_GPIO_Port, REARFOG_Pin, RESET);
+return;
+}
+
+void Day(){
+HAL_GPIO_WritePin(FROTDAY_GPIO_Port, FROTDAY_Pin, SET);
+return;
+}
+
+
+void DayR(){
+HAL_GPIO_WritePin(FROTDAY_GPIO_Port, FROTDAY_Pin, RESET);
+return;
+}
+
+void safe(){
+while(1){
+  HAL_GPIO_TogglePin(SAFELIGHT_GPIO_Port, SAFELIGHT_Pin);
+  HAL_Delay(750);
+  if(rxData == INSERTHERE){
+    HAL_GPIO_WritePin(SAFELIGHT_GPIO_Port, SAFELIGHT_Pin, RESET);
+    return;
+  }
+}
+}
+
+void Hazards(){
+while(1){
+  HAL_GPIO_TogglePin(RINDIC_GPIO_Port, RINDIC_Pin);
+  HAL_GPIO_TogglePin(LINDIC_GPIO_Port, LINDIC_Pin);
+  HAL_Delay(750);
+  if(rxData == INSERTHERE){
+    HAL_GPIO_WritePin(RINDIC_GPIO_Port, RINDIC_Pin, RESET);
+    HAL_GPIO_WritePin(LINDIC_GPIO_Port, LINDIC_Pin, RESET);
+    return;
+  }
+}
+}
 /* USER CODE END 4 */
 
 /**
