@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=PA5 Pin=P1-16
+Removed Pin From Net: NetName=PA3 Pin=P1-17
+Removed Pin From Net: NetName=PA4 Pin=P1-19
+Removed Pin From Net: NetName=PA7 Pin=P1-20
+Added Pin To Net: NetName=PA7 Pin=P1-16
+Added Pin To Net: NetName=PA4 Pin=P1-17
+Added Pin To Net: NetName=PA3 Pin=P1-19
+Added Pin To Net: NetName=PA5 Pin=P1-20
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

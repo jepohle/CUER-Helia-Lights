@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=GND Pin=P1-3
+Removed Pin From Net: NetName=GND Pin=P1-5
+Removed Pin From Net: NetName=GND Pin=P1-9
+Removed Member From Class: ClassName=HELIALights2022V1.0Sheet1 Member=P1
+Added Component: Designator=A1(MODULE_NUCLEO-F303K8)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "NUCLEO-F303K8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/NUCLEO-F303K8/STMicroelectronics/view-part/276791/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=PINRINDIC Pin=A1-3.1
+Added Pin To Net: NetName=PINLINDIC Pin=A1-3.2
+Added Pin To Net: NetName=GND Pin=A1-3.4
+Added Pin To Net: NetName=CAN_TX Pin=A1-3.5
+Added Pin To Net: NetName=PINBRAKE Pin=A1-3.6
+Added Pin To Net: NetName=PINREARPOS Pin=A1-3.7
+Added Pin To Net: NetName=PINREVERSE Pin=A1-3.8
+Added Pin To Net: NetName=PINFRONTFOG Pin=A1-3.12
+Added Pin To Net: NetName=CAN_RX Pin=A1-3.13
+Added Pin To Net: NetName=PINHORN Pin=A1-3.14
+Added Pin To Net: NetName=PINSAFELIGHT Pin=A1-3.15
+Added Pin To Net: NetName=GND Pin=A1-4.2
+Added Pin To Net: NetName=5V Pin=A1-4.4
+Added Pin To Net: NetName=PINFRONTDAY Pin=A1-4.11
+Added Pin To Net: NetName=PINFRONTHIGH Pin=A1-4.12
+Change Net Name : Old Net Name=SPARECONN New Net Name=FRONTFULLCONN
+Added Pin To Net: NetName=PINFRONTFULL Pin=A1-4.15
+Added Pin To Net: NetName=PINFRONTFULL Pin=Q12-1
+Added Net: Name=PINFRONTFULL
+Added Pin To Net: NetName=PINREAERFOG Pin=A1-3.9
+Added Net: Name=PINREAERFOG
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet1 Member=Component A1 NUCLEO-F303K8
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

@@ -1,0 +1,23 @@
+Change Component Footprint: Designator=D1 Old Footprint=FP-SMBJ-MFG New Footprint=ONSC-POWERMITE-2-457-04_D_V
+Change Component Comment : Designator=D1 Old Comment=SS210 New Comment=MBRM120LT3G
+Change Managed Component Library Link : Designator=D1 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=34D5776A-8F0D-4B26-B236-7FD95D53E957 New ItemGUID=854E1C85-6B4B-4E59-A912-55B0ABD737E9 Old RevisionGUID=FCEAF377-462A-42A2-8CB2-D4F2453FCD0E New RevisionGUID=9ED79306-D8FA-4E94-9790-BE5DF4CD1E7A
+Change component parameters: Designator = "D1" ("D1"); Footprint = "FP-SMBJ-MFG"; UniqueID = "\EPFCRILN" ("\EPFCRILN")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.onsemi.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.onsemi.cn/pub_link/Collateral/MBRM120L-D.PDF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.onsemi.com/pub_link/Collateral/457-04.PDF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Configuration"; Value = "Single"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DatasheetVersion"; Value = "Rev. 7"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "IFSM Max (A)"; Value = "50"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "On Semiconductor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "2-Pin POWERMITE, Body 1.965 x 1.9 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "POWERMITE-2-457-04"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageVersion"; Value = "Rev. F, 05/2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packing"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = "MBRM120LT1G"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

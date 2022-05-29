@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetJ16_3 Pin=XF1-3
+Removed Pin From Net: NetName=NetJ16_3 Pin=XF1-4
+Removed Pin From Net: NetName=NetJ15_3 Pin=XF2-4
+Added Pin To Net: NetName=NetJ15_3 Pin=J15-4
+Added Pin To Net: NetName=NetJ15_3 Pin=XF1-3
+Added Pin To Net: NetName=NetJ15_3 Pin=XF1-4
+Added Pin To Net: NetName=NetJ16_3 Pin=XF2-3
+Added Pin To Net: NetName=NetJ16_3 Pin=XF2-4
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

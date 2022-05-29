@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=D3-1
+Added Pin To Net: NetName=GND Pin=D3-2
+Added Pin To Net: NetName=NetD3_1 Pin=D3-1
+Added Pin To Net: NetName=NetD3_1 Pin=L1-1
+Added Pin To Net: NetName=NetD3_1 Pin=U1-2
+Added Net: Name=NetD3_1
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

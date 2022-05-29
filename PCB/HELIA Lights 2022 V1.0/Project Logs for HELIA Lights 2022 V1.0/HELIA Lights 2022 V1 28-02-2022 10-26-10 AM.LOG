@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=CANH Pin=CR1-1
+Removed Pin From Net: NetName=CANL Pin=CR1-2
+Removed Pin From Net: NetName=CANL Pin=U2-6
+Added Pin To Net: NetName=CANL Pin=CR1-1
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

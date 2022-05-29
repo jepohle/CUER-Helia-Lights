@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: HELIA Lights 2022 V1.0.PcbDoc   08/05/2022  07:33:27 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : HELIA Lights 2022 V1.0.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      28mil (0.711mm)                                           Round             40        PTH        15.08inch (383.01mm)
+T2      32mil (0.8mm)                                             Round             2         PTH        0.20inch (5.00mm)
+T3      35mil (0.899mm)                                           Round             24        PTH        5.50inch (139.62mm)
+T4      40mil (1.021mm)                                           Round             66        PTH        19.57inch (497.12mm)
+T5      43mil (1.1mm)                                             Round             6         PTH        0.98inch (24.98mm)
+T6      71mil (1.801mm)                                           Round             16        PTH        5.37inch (136.39mm)
+T7      35mil (0.899mm)                                           Round             4         NPTH       22.81inch (579.25mm)
+T8      118mil (2.997mm)                                          Round             2         NPTH       0.88inch (22.29mm)
+T9      118mil (3mm)                                              Round             14        NPTH       13.20inch (335.20mm)
+T10     130mil (3.299mm)                                          Round             4         NPTH       23.24inch (590.24mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              178
+
+Total Processing Time (hh:mm:ss) : 00:00:01

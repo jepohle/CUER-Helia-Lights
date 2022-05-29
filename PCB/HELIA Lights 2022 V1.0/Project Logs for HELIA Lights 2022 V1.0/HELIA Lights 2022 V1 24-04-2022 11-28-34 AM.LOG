@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=5V Pin=A1-4.4
+Added Pin To Net: NetName=5V Pin=A1-4.1
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

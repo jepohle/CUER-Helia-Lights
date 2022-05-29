@@ -1,0 +1,175 @@
+Export log for : HELIA Lights 2022 V1.0.Rep
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+      Warning: Unknown Kind 11
+AddingPadStyle (Default)
+AddingPadStyle P:EX60Y60D311
+AddingPadStyle P:SX67Y67D431
+AddingPadStyle P:EX67Y67D431
+AddingPadStyle P:EX55Y55D351
+AddingPadStyle P:SX55Y55D351
+AddingPadStyle P:SX59Y59D351
+AddingPadStyle P:EX59Y59D351
+AddingPadStyle EF35X31TOP1
+AddingPadStyle P:EX85Y85D711
+AddingPadStyle EF10X61TOP1
+AddingPadStyle EF24X61TOP1
+AddingPadStyle EF37X152TOP1
+AddingPadStyle EF252X311TOP1
+AddingPadStyle EF39X163TOP1
+AddingPadStyle EF252X323TOP1
+AddingPadStyle EF37X31TOP1
+AddingPadStyle EF219X248TOP1
+AddingPadStyle EF35X89TOP1
+AddingPadStyle EF65X110TOP1
+AddingPadStyle P:EX138Y138D1181
+AddingPadStyle P:EX90Y90D701
+AddingPadStyle P:SX90Y90D701
+AddingPadStyle P:EX118Y118D1181
+AddingPadStyle P:EX60Y60D401
+AddingPadStyle P:SX60Y60D401
+AddingPadStyle EF43X79TOP1
+AddingPadStyle EF30X50TOP1
+AddingPadStyle EF105X100TOP1
+AddingPadStyle EF31X31TOP1
+AddingPadStyle EF85X89TOP1
+AddingPadStyle EF22X50TOP1
+AddingPadStyle EF35X33TOP1
+AddingPadStyle EF31X35TOP1
+AddingPadStyle EF37X67TOP1
+Adding ViaStyle (Default)
+Adding ViaStyle V:EX50Y50D281
+Adding TextStyle (Default)
+Adding TextStyle T:H39W4
+Adding TextStyle T:H50W3
+Adding TextStyle T:H50W10
+Adding TextStyle T:H60W10
+Adding TextStyle T:H59W6
+Adding TextStyle T:H20W4
+Adding TextStyle T:H50W8
+Adding PatternDef ONSC-TO-220-3-221A-09_1
+Adding PatternDef PNSC-EEUFM1H221-2_1
+Adding PatternDef HDR2X5_1
+Adding PatternDef FP-ABM10-MFG_1
+Adding PatternDef KSTN-3557-2_1
+Adding PatternDef STM-LQFP48_L_1
+Adding PatternDef MCHP-SN8_V_1
+Adding PatternDef KTT0005B_L_1
+Adding PatternDef KTT0005B_N_1
+Adding PatternDef RESC1609X50X30NL8T20_1
+Adding PatternDef INF-PG-TO252-3-313_L_1
+Adding PatternDef FP-CB3225-IPC_A_1
+Adding PatternDef FP-CB3225-IPC_A_2
+Adding PatternDef CON_431603102_MOL_1
+Adding PatternDef CON_431603102_MOL_2
+Adding PatternDef CON_430450202_MOL_1
+Adding PatternDef CON_430450202_MOL_2
+Adding PatternDef CON_430450202_MOL_3
+Adding PatternDef CON_430450202_MOL_4
+Adding PatternDef CON_430450202_MOL_5
+Adding PatternDef CON_430450202_MOL_6
+Adding PatternDef CON_430450202_MOL_7
+Adding PatternDef CON_430450202_MOL_8
+Adding PatternDef CON_430450202_MOL_9
+Adding PatternDef CON_430450202_MOL_10
+Adding PatternDef CON_430450202_MOL_11
+Adding PatternDef CON_430450202_MOL_12
+Adding PatternDef CON_430450601_MOL_1
+Adding PatternDef CON_430450601_MOL_2
+Adding PatternDef FP-3413_0330_22-MFG_1
+Adding PatternDef FP-3413_0330_22-MFG_2
+Adding PatternDef ONSC-POWERMITE-2-457-04_D_V_1
+Adding PatternDef FP-LTST-C191TBKT-MFG_1
+Adding PatternDef FP-LTST-C191TBKT-MFG_2
+Adding PatternDef FP-SMBJ-MFG_1
+Adding PatternDef DIODE3_DESD1CAN2SOQ-7_DIO_1
+Adding PatternDef CAPC1608X90X35LL15T15_1
+Adding PatternDef FP-CC0603-DA-MFG_1
+Adding PatternDef FP-CC0603-DA-MFG_2
+Adding PatternDef FP-CC0603-DA-MFG_3
+Adding PatternDef PNSC-EEUFM1H221-2_2
+Adding PatternDef FP-C1206C-EH-MFG_1
+Adding PatternDef FP-C1206C-EH-MFG_2
+Adding CompDef ONSC-TO-220-3-221A-09_1
+Adding CompDef PNSC-EEUFM1H221-2_1
+Adding CompDef HDR2X5_1
+Adding CompDef FP-ABM10-MFG_1
+Adding CompDef KSTN-3557-2_1
+Adding CompDef STM-LQFP48_L_1
+Adding CompDef MCHP-SN8_V_1
+Adding CompDef KTT0005B_L_1
+Adding CompDef KTT0005B_N_1
+Adding CompDef RESC1609X50X30NL8T20_1
+Adding CompDef INF-PG-TO252-3-313_L_1
+Adding CompDef FP-CB3225-IPC_A_1
+Adding CompDef FP-CB3225-IPC_A_2
+Adding CompDef CON_431603102_MOL_1
+Adding CompDef CON_431603102_MOL_2
+Adding CompDef CON_430450202_MOL_1
+Adding CompDef CON_430450202_MOL_2
+Adding CompDef CON_430450202_MOL_3
+Adding CompDef CON_430450202_MOL_4
+Adding CompDef CON_430450202_MOL_5
+Adding CompDef CON_430450202_MOL_6
+Adding CompDef CON_430450202_MOL_7
+Adding CompDef CON_430450202_MOL_8
+Adding CompDef CON_430450202_MOL_9
+Adding CompDef CON_430450202_MOL_10
+Adding CompDef CON_430450202_MOL_11
+Adding CompDef CON_430450202_MOL_12
+Adding CompDef CON_430450601_MOL_1
+Adding CompDef CON_430450601_MOL_2
+Adding CompDef FP-3413_0330_22-MFG_1
+Adding CompDef FP-3413_0330_22-MFG_2
+Adding CompDef ONSC-POWERMITE-2-457-04_D_V_1
+Adding CompDef FP-LTST-C191TBKT-MFG_1
+Adding CompDef FP-LTST-C191TBKT-MFG_2
+Adding CompDef FP-SMBJ-MFG_1
+Adding CompDef DIODE3_DESD1CAN2SOQ-7_DIO_1
+Adding CompDef CAPC1608X90X35LL15T15_1
+Adding CompDef FP-CC0603-DA-MFG_1
+Adding CompDef FP-CC0603-DA-MFG_2
+Adding CompDef FP-CC0603-DA-MFG_3
+Adding CompDef PNSC-EEUFM1H221-2_2
+Adding CompDef FP-C1206C-EH-MFG_1
+Adding CompDef FP-C1206C-EH-MFG_2
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+      Warning: Unexpected Poly Region Object Found On Layer TopLayer.
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+      Warning: Polygon has been imported as unpoured.  It will need to be repoured in PCAD
+ 
+EndLog

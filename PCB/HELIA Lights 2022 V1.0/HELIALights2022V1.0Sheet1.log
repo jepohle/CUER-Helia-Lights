@@ -1,0 +1,183 @@
+P-CAD Schematic ASCII File Export Log :
+   Current document: C:\Users\Public\Documents\Altium\Projects\HELIA Lights 2022 V1.0\HELIALights2022V1.0Sheet1.sch
+   BeginLog
+      Information : 
+      Information :   Start exporting symbols
+      Information :    Exporting symbol definition(s) for component [Component_1]
+      Warning :     No data found for DisplayMode [Normal] & PartNum [1]
+      Information :    Exporting symbol definition(s) for component [430450202]
+      Warning :     Symbol name [430450202], mode [Normal], part [1] changed to [430450202_1_N]
+      Warning :     Rectangle [200mil : -200mil]-[500mil : 100mil] exported as lines.
+      Information : Start exporting the symbol definitions for power ports
+      Warning :     End exporting the symbol defintions for power ports
+      Information :   End exporting symbols
+      Information : 
+      Information : 
+      Information :   Start exporting components
+      Information :    Exporting component [Component_1]
+      Warning :     Component [Component_1] changed to [COMPONENT_1]
+      Information :    Exporting component [430450202]
+      Information : Start exporting component definitions for power ports
+      Warning :     End exporting component definitions for powerports
+      Information :   End exporting components
+      Information : 
+   EndLog
+   Imported succesfully!
+ 
+      Information : Start export of netlist
+      Information : Start export of component instances
+      Information : End export of component instances
+      Information : Start export of nets
+      Information : End export of nets
+      Information : End export of netlist
+      Warning :     Workspace size [180000 : 180000] exceeds maximum limit which is [60000 : 60000] units. Some objects may fall outside workspace
+      Information : Start exporting the objects for sheet [430450601]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Warning :     Rectangle [200mil : -600mil]-[500mil : 100mil] exported as lines.
+      Information : End exporting the objects for sheet [430450601]
+      Information : Start exporting the objects for sheet [HELIALights2022V1]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     Exporting powerport at [4724.411mil : 5708.662mil] as component with designator [P3V31]
+      Warning :     Exporting powerport at [7086.618mil : 4566.932mil] as component with designator [GND1]
+      Warning :     Exporting powerport at [1181.102mil : 4527.559mil] as component with designator [GND2]
+      Warning :     Exporting powerport at [1181.102mil : 5708.661mil] as component with designator [P3V32]
+      Warning :     Exporting powerport at [6299.216mil : 551.181mil] as component with designator [GND3]
+      Warning :     Exporting powerport at [3070.867mil : 9055.118mil] as component with designator [GND4]
+      Warning :     Exporting powerport at [4488.189mil : 8018.898mil] as component with designator [GND5]
+      Warning :     Exporting powerport at [5551.181mil : 9842.52mil] as component with designator [P3V33]
+      Warning :     Exporting powerport at [944.882mil : 10078.746mil] as component with designator [PP12___P241]
+      Warning :     Exporting powerport at [6732.284mil : 8645.67mil] as component with designator [GND6]
+      Warning :     Exporting powerport at [9685.045mil : 905.512mil] as component with designator [GND7]
+      Warning :     Exporting powerport at [9645.674mil : 4803.152mil] as component with designator [GND8]
+      Warning :     Exporting powerport at [11574.809mil : 5118.113mil] as component with designator [P5V1]
+      Warning :     Exporting powerport at [10177.959mil : 9206.305mil] as component with designator [GND9]
+      Warning :     Exporting powerport at [12663.361mil : 8970.454mil] as component with designator [GND10]
+      Warning :     Exporting powerport at [11595.282mil : 8170.084mil] as component with designator [GND11]
+      Warning :     Exporting powerport at [12658.274mil : 9993.706mil] as component with designator [P5V2]
+      Warning :     Exporting powerport at [8188.981mil : 10196.856mil] as component with designator [PP12___P242]
+      Warning :     Exporting powerport at [13839.376mil : 8796.856mil] as component with designator [GND12]
+      Warning :     Exporting powerport at [9015.753mil : 4803.152mil] as component with designator [GND13]
+      Warning :     Exporting powerport at [12598.432mil : 1496.064mil] as component with designator [GND14]
+      Warning :     Exporting powerport at [12992.133mil : 2401.576mil] as component with designator [P3V34]
+      Warning :     Exporting powerport at [12125.991mil : 4015.75mil] as component with designator [GND15]
+      Warning :     Exporting powerport at [5553.139mil : 8832.659mil] as component with designator [GND16]
+      Information : End exporting the objects for sheet [HELIALights2022V1]
+      Information : Start exporting the objects for sheet [431603102]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Warning :     Rectangle [200mil : -600mil]-[500mil : 100mil] exported as lines.
+      Information : End exporting the objects for sheet [431603102]
+      Information : Sheet name [DESD1CAN2SOQ-7] changed to [DESD1CAN2SOQ_7]
+      Information : Start exporting the objects for sheet [DESD1CAN2SOQ-7]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Information : End exporting the objects for sheet [DESD1CAN2SOQ-7]
+      Information : Start exporting the objects for sheet [HELIALights2022V1]
+      Information : Start WIRES export
+      Information : End WIRES export
+      Information : Start BUSES export
+      Information : End BUSES export
+      Information : Start PORTS export
+      Information : End PORTS export
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     P-CAD doesn't support object type [Parameter]
+      Warning :     Exporting powerport at [2800mil : 9800mil] as component with designator [PP12___P243]
+      Warning :     Exporting powerport at [4800mil : 9700mil] as component with designator [PP12___P244]
+      Warning :     Exporting powerport at [6800mil : 9800mil] as component with designator [PP12___P245]
+      Warning :     Exporting powerport at [8800mil : 9800mil] as component with designator [PP12___P246]
+      Warning :     Exporting powerport at [10800mil : 9800mil] as component with designator [PP12___P247]
+      Warning :     Exporting powerport at [12800mil : 9800mil] as component with designator [PP12___P248]
+      Warning :     Exporting powerport at [2800mil : 7800mil] as component with designator [PP12___P249]
+      Warning :     Exporting powerport at [4800mil : 7800mil] as component with designator [PP12___P2410]
+      Warning :     Exporting powerport at [6800mil : 7800mil] as component with designator [PP12___P2411]
+      Warning :     Exporting powerport at [8800mil : 7800mil] as component with designator [PP12___P2412]
+      Warning :     Exporting powerport at [10800mil : 7800mil] as component with designator [PP12___P2413]
+      Warning :     Exporting powerport at [12800mil : 7800mil] as component with designator [PP12___P2414]
+      Warning :     Exporting powerport at [3800mil : 4900mil] as component with designator [GND17]
+      Warning :     Exporting powerport at [5700mil : 4900mil] as component with designator [GND18]
+      Warning :     Exporting powerport at [1500mil : 4900mil] as component with designator [GND19]
+      Warning :     Exporting powerport at [2400mil : 700mil] as component with designator [GND20]
+      Warning :     Exporting powerport at [9800mil : 600mil] as component with designator [GND21]
+      Warning :     Exporting powerport at [1000mil : 2100mil] as component with designator [PP12___P2415]
+      Warning :     Exporting powerport at [7700mil : 1800mil] as component with designator [PP12___P2416]
+      Warning :     Exporting powerport at [1500mil : 3600mil] as component with designator [GND22]
+      Warning :     Exporting powerport at [3800mil : 3600mil] as component with designator [GND23]
+      Warning :     Exporting powerport at [5800mil : 3600mil] as component with designator [GND24]
+      Warning :     Exporting powerport at [7800mil : 3600mil] as component with designator [GND25]
+      Warning :     Exporting powerport at [7800mil : 4900mil] as component with designator [GND26]
+      Warning :     Exporting powerport at [9800mil : 4900mil] as component with designator [GND27]
+      Warning :     Exporting powerport at [11800mil : 4900mil] as component with designator [GND28]
+      Warning :     Exporting powerport at [11800mil : 3600mil] as component with designator [GND29]
+      Warning :     Exporting powerport at [9800mil : 3600mil] as component with designator [GND30]
+      Information : End exporting the objects for sheet [HELIALights2022V1]
+EndLog

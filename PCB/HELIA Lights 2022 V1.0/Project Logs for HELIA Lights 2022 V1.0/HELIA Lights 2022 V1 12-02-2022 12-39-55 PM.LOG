@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=+12 / +24 Pin=D7-1
+Removed Pin From Net: NetName=+12 / +24 Pin=D7-3
+Removed Pin From Net: NetName=+12 / +24 Pin=D8-1
+Removed Pin From Net: NetName=NetD8_2 Pin=D8-2
+Removed Pin From Net: NetName=+12 / +24 Pin=D8-3
+Added Pin To Net: NetName=+12 / +24 Pin=D7-2
+Added Pin To Net: NetName=NetD8_2 Pin=D8-1
+Added Pin To Net: NetName=+12 / +24 Pin=D8-2
+Added Pin To Net: NetName=NetD8_2 Pin=D8-3
+Change Net Name : Old Net Name=NetD8_2 New Net Name=NetD8_1
+Added Pin To Net: NetName=NetD7_1 Pin=D7-1
+Added Pin To Net: NetName=NetD7_1 Pin=D7-3
+Added Pin To Net: NetName=NetD7_1 Pin=XF1-1
+Added Pin To Net: NetName=NetD7_1 Pin=XF1-2
+Added Net: Name=NetD7_1
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

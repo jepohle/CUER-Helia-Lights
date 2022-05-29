@@ -1,0 +1,25 @@
+Change Component Footprint: Designator=L1 Old Footprint=FP-CB3225-IPC_A New Footprint=BOUR-SRN8040-101M_V
+Change Component Comment : Designator=L1 Old Comment=100u New Comment=SRN8040-101M
+Change Managed Component Library Link : Designator=L1 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=46637C71-4801-492F-AC54-29E1DB29577B New ItemGUID=214C2049-4EBE-40E4-9D24-E163670DA514 Old RevisionGUID=5AAE6171-C58F-48F5-9C8B-4932EAF35315 New RevisionGUID=676438FF-99D9-411B-AB2B-F29D39A0CE59
+Change component parameters: Designator = "L1" ("L1"); Footprint = "FP-CB3225-IPC_A"; UniqueID = "\OBJOKONR" ("\OBJOKONR")
+Change component parameters (AddParameter): Name = "Brand/Series"; Value = "SRN8040Series"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current, Rating"; Value = "1
+
+A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet URL"; Value = "http://www.produktinfo.conrad.com/datenblaetter/1000000-1099999/001056456-da-01-en-MAG_ABG_LEIST_IND_SRN8040_101M_100UH_SMD.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Version"; Value = "08/2013"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Inductance"; Value = "100
+
+µH"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Bourns"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer URL"; Value = "http://www.bourns.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Description"; Value = "2-Pin Surface Mount Device, Body 8 x 8 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Reference"; Value = "SRN8040-101M"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Termination"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "±20
+
+%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Power"; VariantName = "[No Variations]"
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

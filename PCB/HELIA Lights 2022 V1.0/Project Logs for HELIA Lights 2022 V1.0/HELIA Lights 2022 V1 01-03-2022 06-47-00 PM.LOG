@@ -1,0 +1,20 @@
+Change Component Footprint: Designator=C1 Old Footprint=FP-C1206C-EH-MFG New Footprint=PNSC-EEUFM1H221-2
+Change Component Comment : Designator=C1 Old Comment=C1206C107M9PACTU New Comment=EEU-FR1C102B
+Change Managed Component Library Link : Designator=C1 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=50C56187-4537-4993-A229-30EB0D73B1B3 New ItemGUID=C1A8C354-ECED-419D-9425-305796AE975B Old RevisionGUID=07009AD5-C079-4A41-8BD8-FA34B5E70CB7 New RevisionGUID=00C93158-8CCA-4025-A07A-D84D19E4B6E6
+Change component parameters: Designator = "C1" ("C1"); Footprint = "FP-C1206C-EH-MFG"; UniqueID = "\ZDZPUUTU" ("\ZDZPUUTU")
+Change component parameters (AddParameter): Name = "Capacitance"; Value = "1000µF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case Size/Dimension"; Value = "Ø10x16mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet URL"; Value = "http://www.produktinfo.conrad.com/datenblaetter/425000-449999/446746-da-01-en-ALU_KONDENSATOR_FR_R_1000_UF_16V.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Version"; Value = "Nov-11"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Impedance"; Value = "0.028O"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Lifetime@Temperature"; Value = "8000Hrs@105degC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Panasonic"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer URL"; Value = "http://www.panasonic.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temp Range"; Value = "-40to+105degC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temp-Max"; Value = "105degC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ripple Current"; Value = "1790mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Series"; Value = "FR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Radial"; VariantName = "[No Variations]"
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

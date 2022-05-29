@@ -1,0 +1,32 @@
+Removed Pin From Net: NetName=PA7 Pin=P1-17
+Removed Pin From Net: NetName=PA4 Pin=P1-18
+Removed Pin From Net: NetName=PA6 Pin=P1-19
+Removed Pin From Net: NetName=PA3 Pin=P1-20
+Removed Member From Class: ClassName=HELIALights2022V1.0Sheet2 Member=J1
+Removed Member From Class: ClassName=HELIALights2022V1.0Sheet2 Member=J2
+Removed Member From Class: ClassName=HELIALights2022V1.0Sheet2 Member=R2
+Removed Member From Class: ClassName=HELIALights2022V1.0Sheet1 Member=R9
+Added Pin To Net: NetName=PA3 Pin=P1-17
+Added Pin To Net: NetName=PA6 Pin=P1-18
+Added Pin To Net: NetName=PA4 Pin=P1-19
+Added Pin To Net: NetName=PA7 Pin=P1-20
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet1 Member=Component D2 LTST-C930KGKT
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component J3 430450202
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component J4 430450202
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component J10 430450202
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component J16 39-30-0040
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component Q9 NCE3080K
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet1 Member=Component R1 2k7
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R8 10k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R9 100k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R10 100k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R11 100k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R12 100k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R14 100k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R16 10k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R18 10k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R22 100k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component R24 100k
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet2 Member=Component XF1 3557-2
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2

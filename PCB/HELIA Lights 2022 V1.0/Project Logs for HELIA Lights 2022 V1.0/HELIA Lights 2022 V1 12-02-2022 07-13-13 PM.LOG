@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=CANL Pin=U3-6
+Added Pin To Net: NetName=CANH Pin=U3-7
+Added Member To Class: ClassName=HELIALights2022V1.0Sheet1 Member=Component P1 Header 5X2
+Added Room: Name=HELIALights2022V1.0Sheet1
+Added Room: Name=HELIALights2022V1.0Sheet2
