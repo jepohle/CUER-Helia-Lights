@@ -134,7 +134,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    heartbeat();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -180,7 +179,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan1){
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
   if(HAL_CAN_GetRxMessage(&hcan, 0, &rxHeader, rxData) != HAL_OK){
     Error_Handler();
   }

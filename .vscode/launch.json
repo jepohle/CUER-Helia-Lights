@@ -11,7 +11,9 @@
             "preLaunchTask": "Build STM",
             "device": "stm32f303x8.s",
             "configFiles": [
-                "openocd.cfg"
+                "openocd.cfg",
+                "interface/stlink.cfg",
+                "target/stm32f3x.cfg"
             ]
         }
     ]
