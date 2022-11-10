@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "can.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -47,13 +48,15 @@
 /* USER CODE BEGIN PV */
 CAN_RxHeaderTypeDef rxHeader;
 CAN_TxHeaderTypeDef txHeader;
-uint8_t rxData[8] = {0,0,0,0,0,0,0,0};
+uint8_t rxData[8] = {0,0,0,0,0,0,0,0};      //[Brake, FogF, FogR, Day, IndicR, IndicL, Hazard, Safe]
 uint8_t txData[8] = {0,0,0,0,0,0,0,0};
 CAN_FilterTypeDef canfil;
 uint32_t canRxMailbox;
 uint32_t canTxMailbox;
 uint32_t RXID;
 uint32_t INSERTHERE; //This is a random variable that needs changing of both type and content. Only a dummy as the 0 state for the cyclic switching lights
+//CAN ID for lights
+const int LIGHTS_ID = 0x730;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -125,8 +128,9 @@ int main(void)
   MX_GPIO_Init();
   MX_CAN_Init();
   MX_USART2_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_UART_Receive_IT(&huart2, rxData, 8);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -134,6 +138,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -180,31 +185,64 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
+  FullIOReset();                       //Reset all lights for reassignment
   if(HAL_CAN_GetRxMessage(&hcan, 0, &rxHeader, rxData) != HAL_OK){
     Error_Handler();
   }
+  // else{
+  //   if(){
+
+  //   }
+  //   else if(){
+
+  //   }
+  //   else if(){
+
+  //   }
+  //   else if(){
+
+  //   }
+  //   else if(){
+
+  //   }
+  //   else if(){
+
+  //   }
+  //   else if(){
+
+  //   }
+  }
+//repeat above for UART interrupts for bench testing without proper CAN system and knowledge of data and addresses
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+    FullIOReset();                       //Reset all pinstates for reasignment, should happen fast enough to not cause any major flashing of lighs
+    if(rxData[0] == 1){
+      Brake();
+    }
+    if(rxData[1] == 1){
+      FogF();
+    }
+    if(rxData[2] == 1){
+      FogR();
+    }
+    if(rxData[3] == 1){
+      Day();
+    }
+    if(rxData[4] == 1||rxData[5] == 1||rxData[6] == 1||rxData[7] == 1){
+      HAL_TIM_Base_Start_IT(&htim2);
+    }
+  HAL_UART_Receive_IT(&huart2, rxData, 8);
 }
 
-void RBlinker(){
-while(1){
-  HAL_GPIO_TogglePin(RINDIC_GPIO_Port, RINDIC_Pin);
-  HAL_Delay(750);
-  if(rxData == INSERTHERE){
-    HAL_GPIO_WritePin(RINDIC_GPIO_Port, RINDIC_Pin, RESET);
-    return;
-  }
-}
-}
-
-void LBlinker(){
-while(1){
-  HAL_GPIO_TogglePin(LINDIC_GPIO_Port, LINDIC_Pin);
-  HAL_Delay(750);
-  if(rxData == INSERTHERE){
-    HAL_GPIO_WritePin(LINDIC_GPIO_Port, LINDIC_Pin, RESET);
-    return;
-  }
-}
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
+      if(rxData[4] == 1||rxData[6] == 1){
+        HAL_GPIO_TogglePin(RINDIC_GPIO_Port, RINDIC_Pin);
+      } 
+      if(rxData[5] == 1||rxData[6] == 1){
+        HAL_GPIO_TogglePin(LINDIC_GPIO_Port, LINDIC_Pin);
+      }
+      if(rxData[7] == 1){
+        HAL_GPIO_TogglePin(SAFELIGHT_GPIO_Port, SAFELIGHT_Pin);
+      }
 }
 
 void Brake(){
@@ -249,28 +287,14 @@ HAL_GPIO_WritePin(FROTDAY_GPIO_Port, FROTDAY_Pin, RESET);
 return;
 }
 
-void safe(){
-while(1){
-  HAL_GPIO_TogglePin(SAFELIGHT_GPIO_Port, SAFELIGHT_Pin);
-  HAL_Delay(750);
-  if(rxData == INSERTHERE){
-    HAL_GPIO_WritePin(SAFELIGHT_GPIO_Port, SAFELIGHT_Pin, RESET);
-    return;
-  }
-}
-}
 
-void Hazards(){
-while(1){
-  HAL_GPIO_TogglePin(RINDIC_GPIO_Port, RINDIC_Pin);
-  HAL_GPIO_TogglePin(LINDIC_GPIO_Port, LINDIC_Pin);
-  HAL_Delay(750);
-  if(rxData == INSERTHERE){
-    HAL_GPIO_WritePin(RINDIC_GPIO_Port, RINDIC_Pin, RESET);
-    HAL_GPIO_WritePin(LINDIC_GPIO_Port, LINDIC_Pin, RESET);
-    return;
-  }
-}
+
+void FullIOReset(){
+  DayR();
+  FogRR();
+  FogFR();
+  BrakeR();
+  HAL_TIM_Base_Stop_IT(&htim2);
 }
 
 void heartbeat(void){
