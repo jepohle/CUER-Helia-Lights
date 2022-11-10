@@ -53,7 +53,16 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void Brake(void);
+void BrakeR(void);
+void FogF(void);
+void FogFR(void);
+void FogR(void);
+void FogRR(void);
+void Day(void);
+void DayR(void);
+void FullIOReset(void);
+void heartbeat(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

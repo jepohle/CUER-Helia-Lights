@@ -247,44 +247,36 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 
 void Brake(){
 HAL_GPIO_WritePin(BRAKE_GPIO_Port, BRAKE_Pin, SET);
-return;
 }
 
 void BrakeR(){
 HAL_GPIO_WritePin(BRAKE_GPIO_Port, BRAKE_Pin, RESET);
-return;
 }
 
 void FogF(){
 HAL_GPIO_WritePin(FRONTFOG_GPIO_Port, FRONTFOG_Pin, SET);
-return;
 }
 
 void FogFR(){
 HAL_GPIO_WritePin(FRONTFOG_GPIO_Port, FRONTFOG_Pin, RESET);
-return;
 }
 
 void FogR(){
 HAL_GPIO_WritePin(REARFOG_GPIO_Port, REARFOG_Pin, SET);
-return;
 }
 
 
 void FogRR(){
 HAL_GPIO_WritePin(REARFOG_GPIO_Port, REARFOG_Pin, RESET);
-return;
 }
 
 void Day(){
 HAL_GPIO_WritePin(FROTDAY_GPIO_Port, FROTDAY_Pin, SET);
-return;
 }
 
 
 void DayR(){
 HAL_GPIO_WritePin(FROTDAY_GPIO_Port, FROTDAY_Pin, RESET);
-return;
 }
 
 
@@ -297,12 +289,11 @@ void FullIOReset(){
   HAL_TIM_Base_Stop_IT(&htim2);
 }
 
-void heartbeat(void){
+void heartbeat(){
   if (HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox) != HAL_OK){
     Error_Handler();
   }
   HAL_Delay(250);
-  return;
 }
 /* USER CODE END 4 */
 

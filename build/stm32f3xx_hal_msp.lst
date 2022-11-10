@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccrJXnGa.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYiLRYq.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccrJXnGa.s 			page 1
   28:Core/Src/stm32f3xx_hal_msp.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32f3xx_hal_msp.c **** 
   30:Core/Src/stm32f3xx_hal_msp.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccrJXnGa.s 			page 2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYiLRYq.s 			page 2
 
 
   31:Core/Src/stm32f3xx_hal_msp.c **** 
@@ -101,48 +101,47 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccrJXnGa.s 			page 1
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		@ link register save eliminated.
   34 0000 82B0     		sub	sp, sp, #8
-  35              	.LCFI0:
-  36              		.cfi_def_cfa_offset 8
+  35              		.cfi_def_cfa_offset 8
   65:Core/Src/stm32f3xx_hal_msp.c ****   /* USER CODE BEGIN MspInit 0 */
   66:Core/Src/stm32f3xx_hal_msp.c **** 
   67:Core/Src/stm32f3xx_hal_msp.c ****   /* USER CODE END MspInit 0 */
   68:Core/Src/stm32f3xx_hal_msp.c **** 
   69:Core/Src/stm32f3xx_hal_msp.c ****   __HAL_RCC_SYSCFG_CLK_ENABLE();
-  37              		.loc 1 69 3 view .LVU1
-  38              	.LBB2:
-  39              		.loc 1 69 3 view .LVU2
-  40              		.loc 1 69 3 view .LVU3
-  41 0002 0A4B     		ldr	r3, .L3
-  42 0004 9A69     		ldr	r2, [r3, #24]
-  43 0006 42F00102 		orr	r2, r2, #1
-  44 000a 9A61     		str	r2, [r3, #24]
-  45              		.loc 1 69 3 view .LVU4
-  46 000c 9A69     		ldr	r2, [r3, #24]
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccrJXnGa.s 			page 3
+  36              		.loc 1 69 3 view .LVU1
+  37              	.LBB2:
+  38              		.loc 1 69 3 view .LVU2
+  39              		.loc 1 69 3 view .LVU3
+  40 0002 0A4B     		ldr	r3, .L3
+  41 0004 9A69     		ldr	r2, [r3, #24]
+  42 0006 42F00102 		orr	r2, r2, #1
+  43 000a 9A61     		str	r2, [r3, #24]
+  44              		.loc 1 69 3 view .LVU4
+  45 000c 9A69     		ldr	r2, [r3, #24]
+  46 000e 02F00102 		and	r2, r2, #1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYiLRYq.s 			page 3
 
 
-  47 000e 02F00102 		and	r2, r2, #1
-  48 0012 0092     		str	r2, [sp]
-  49              		.loc 1 69 3 view .LVU5
-  50 0014 009A     		ldr	r2, [sp]
-  51              	.LBE2:
-  52              		.loc 1 69 3 view .LVU6
+  47 0012 0092     		str	r2, [sp]
+  48              		.loc 1 69 3 view .LVU5
+  49 0014 009A     		ldr	r2, [sp]
+  50              	.LBE2:
+  51              		.loc 1 69 3 view .LVU6
   70:Core/Src/stm32f3xx_hal_msp.c ****   __HAL_RCC_PWR_CLK_ENABLE();
-  53              		.loc 1 70 3 view .LVU7
-  54              	.LBB3:
-  55              		.loc 1 70 3 view .LVU8
-  56              		.loc 1 70 3 view .LVU9
-  57 0016 DA69     		ldr	r2, [r3, #28]
-  58 0018 42F08052 		orr	r2, r2, #268435456
-  59 001c DA61     		str	r2, [r3, #28]
-  60              		.loc 1 70 3 view .LVU10
-  61 001e DB69     		ldr	r3, [r3, #28]
-  62 0020 03F08053 		and	r3, r3, #268435456
-  63 0024 0193     		str	r3, [sp, #4]
-  64              		.loc 1 70 3 view .LVU11
-  65 0026 019B     		ldr	r3, [sp, #4]
-  66              	.LBE3:
-  67              		.loc 1 70 3 view .LVU12
+  52              		.loc 1 70 3 view .LVU7
+  53              	.LBB3:
+  54              		.loc 1 70 3 view .LVU8
+  55              		.loc 1 70 3 view .LVU9
+  56 0016 DA69     		ldr	r2, [r3, #28]
+  57 0018 42F08052 		orr	r2, r2, #268435456
+  58 001c DA61     		str	r2, [r3, #28]
+  59              		.loc 1 70 3 view .LVU10
+  60 001e DB69     		ldr	r3, [r3, #28]
+  61 0020 03F08053 		and	r3, r3, #268435456
+  62 0024 0193     		str	r3, [sp, #4]
+  63              		.loc 1 70 3 view .LVU11
+  64 0026 019B     		ldr	r3, [sp, #4]
+  65              	.LBE3:
+  66              		.loc 1 70 3 view .LVU12
   71:Core/Src/stm32f3xx_hal_msp.c **** 
   72:Core/Src/stm32f3xx_hal_msp.c ****   /* System interrupt init*/
   73:Core/Src/stm32f3xx_hal_msp.c **** 
@@ -150,30 +149,29 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccrJXnGa.s 			page 1
   75:Core/Src/stm32f3xx_hal_msp.c **** 
   76:Core/Src/stm32f3xx_hal_msp.c ****   /* USER CODE END MspInit 1 */
   77:Core/Src/stm32f3xx_hal_msp.c **** }
-  68              		.loc 1 77 1 is_stmt 0 view .LVU13
-  69 0028 02B0     		add	sp, sp, #8
-  70              	.LCFI1:
-  71              		.cfi_def_cfa_offset 0
-  72              		@ sp needed
-  73 002a 7047     		bx	lr
-  74              	.L4:
-  75              		.align	2
-  76              	.L3:
-  77 002c 00100240 		.word	1073876992
-  78              		.cfi_endproc
-  79              	.LFE123:
-  81              		.text
-  82              	.Letext0:
-  83              		.file 2 "c:\\users\\user\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpac
-  84              		.file 3 "c:\\users\\user\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpac
-  85              		.file 4 "Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h"
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccrJXnGa.s 			page 4
+  67              		.loc 1 77 1 is_stmt 0 view .LVU13
+  68 0028 02B0     		add	sp, sp, #8
+  69              		.cfi_def_cfa_offset 0
+  70              		@ sp needed
+  71 002a 7047     		bx	lr
+  72              	.L4:
+  73              		.align	2
+  74              	.L3:
+  75 002c 00100240 		.word	1073876992
+  76              		.cfi_endproc
+  77              	.LFE123:
+  79              		.text
+  80              	.Letext0:
+  81              		.file 2 "c:\\users\\user\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpac
+  82              		.file 3 "c:\\users\\user\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpac
+  83              		.file 4 "Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYiLRYq.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f3xx_hal_msp.c
-C:\Users\User\AppData\Local\Temp\ccrJXnGa.s:20     .text.HAL_MspInit:0000000000000000 $t
-C:\Users\User\AppData\Local\Temp\ccrJXnGa.s:26     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-C:\Users\User\AppData\Local\Temp\ccrJXnGa.s:77     .text.HAL_MspInit:000000000000002c $d
+C:\Users\User\AppData\Local\Temp\ccYiLRYq.s:20     .text.HAL_MspInit:0000000000000000 $t
+C:\Users\User\AppData\Local\Temp\ccYiLRYq.s:26     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+C:\Users\User\AppData\Local\Temp\ccYiLRYq.s:75     .text.HAL_MspInit:000000000000002c $d
 
 NO UNDEFINED SYMBOLS

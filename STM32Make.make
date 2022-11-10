@@ -42,6 +42,7 @@ Core/Src/main.c \
 Core/Src/stm32f3xx_hal_msp.c \
 Core/Src/stm32f3xx_it.c \
 Core/Src/system_stm32f3xx.c \
+Core/Src/tim.c \
 Core/Src/usart.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.c \
@@ -148,7 +149,8 @@ CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-
 CXXFLAGS = $(MCU) $(CXX_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -feliminate-unused-debug-types
 
 ifeq ($(DEBUG), 1)
-CFLAGS += -g -gdwarf-2
+CFLAGS += -g -gdwarf -ggdb
+CXXFLAGS += -g -gdwarf -ggdb
 endif
 
 # Add additional flags
@@ -236,6 +238,12 @@ erase: $(BUILD_DIR)/$(TARGET).elf
 #######################################
 clean:
 	cmd /c rd /s /q $(BUILD_DIR)
+
+#######################################
+# custom makefile rules
+#######################################
+
+
 	
 #######################################
 # dependencies
