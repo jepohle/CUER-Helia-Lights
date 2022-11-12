@@ -70,8 +70,8 @@ void heartbeat(void);
 #define MCO_GPIO_Port GPIOF
 #define FRONTHIGH_Pin GPIO_PIN_0
 #define FRONTHIGH_GPIO_Port GPIOA
-#define FROTDAY_Pin GPIO_PIN_1
-#define FROTDAY_GPIO_Port GPIOA
+#define FRONTDAY_Pin GPIO_PIN_1
+#define FRONTDAY_GPIO_Port GPIOA
 #define VCP_TX_Pin GPIO_PIN_2
 #define VCP_TX_GPIO_Port GPIOA
 #define BRAKE_Pin GPIO_PIN_0

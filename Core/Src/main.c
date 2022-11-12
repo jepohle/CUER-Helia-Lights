@@ -49,8 +49,7 @@
 CAN_RxHeaderTypeDef rxHeader;
 CAN_TxHeaderTypeDef txHeader;
 uint8_t rxData[8] = {0,0,0,0,0,0,0,0};      //[Brake, FogF, FogR, Day, IndicR, IndicL, Hazard, Safe]
-uint8_t txData[8] = {0,0,0,0,0,0,0,0};
-CAN_FilterTypeDef canfil;
+uint8_t txData[8];
 uint32_t canRxMailbox;
 uint32_t canTxMailbox;
 uint32_t RXID;
@@ -86,9 +85,12 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  HAL_CAN_Start(&hcan);
+  HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
 
   //initialise CAN filters
+  CAN_FilterTypeDef canfil;
+  canfil.FilterActivation = CAN_FILTER_ENABLE;
   canfil.FilterBank = 0;
   canfil.FilterMode = CAN_FILTERMODE_IDMASK;
   canfil.FilterFIFOAssignment = CAN_RX_FIFO0;
@@ -99,21 +101,15 @@ int main(void)
   canfil.FilterScale = CAN_FILTERSCALE_32BIT;
   canfil.FilterActivation = ENABLE;
   canfil.SlaveStartFilterBank = 14;
-
+  HAL_CAN_ConfigFilter(&hcan, &canfil);
 
   //setup CAN header for transmitting messages
-  txHeader.DLC = 8; // Number of bites to be transmitted max- 8
+  txHeader.DLC = 2; // Number of bytes to be transmitted max- 8
   txHeader.IDE = CAN_ID_STD;
   txHeader.RTR = CAN_RTR_DATA;
-  txHeader.StdId = 0x030;
-  txHeader.ExtId = 0x02;
-  txHeader.TransmitGlobalTime = DISABLE;
-
-
-  //initialize CAN bus
-  HAL_CAN_ConfigFilter(&hcan, &canfil);
-  HAL_CAN_Start(&hcan);
-  HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
+  txHeader.StdId = 0x303;
+  txData[0] = 50;
+  txData[1] = 0xAA;
 
   /* USER CODE END Init */
 
@@ -131,12 +127,17 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Receive_IT(&huart2, rxData, 8);
+  HAL_CAN_Start(&hcan);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
+  {  
+    if(HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox)!=HAL_OK){
+      Error_Handler();
+    }
+    HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -186,7 +187,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
   FullIOReset();                       //Reset all lights for reassignment
-  if(HAL_CAN_GetRxMessage(&hcan, 0, &rxHeader, rxData) != HAL_OK){
+  if(HAL_CAN_GetRxMessage(&hcan, CAN_RX_FIFO0, &rxHeader, rxData) != HAL_OK){
     Error_Handler();
   }
   // else{
@@ -271,12 +272,12 @@ HAL_GPIO_WritePin(REARFOG_GPIO_Port, REARFOG_Pin, RESET);
 }
 
 void Day(){
-HAL_GPIO_WritePin(FROTDAY_GPIO_Port, FROTDAY_Pin, SET);
+HAL_GPIO_WritePin(FRONTDAY_GPIO_Port, FRONTDAY_Pin, SET);
 }
 
 
 void DayR(){
-HAL_GPIO_WritePin(FROTDAY_GPIO_Port, FROTDAY_Pin, RESET);
+HAL_GPIO_WritePin(FRONTDAY_GPIO_Port, FRONTDAY_Pin, RESET);
 }
 
 
