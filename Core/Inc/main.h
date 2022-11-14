@@ -61,8 +61,19 @@ void FogR(void);
 void FogRR(void);
 void Day(void);
 void DayR(void);
+void FrontFull(void);
+void FrontFullR(void);
+void Reverse(void);
+void ReverseR(void);
+void Horn(void);
+void HornR(void);
+void RearPos(void);
+void RearPosR(void);
+void FrontHigh(void);
+void FrontHighR(void);
 void FullIOReset(void);
 void heartbeat(void);
+void uartHeartbeat(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

@@ -48,12 +48,12 @@
 /* USER CODE BEGIN PV */
 CAN_RxHeaderTypeDef rxHeader;
 CAN_TxHeaderTypeDef txHeader;
-uint8_t rxData[8] = {0,0,0,0,0,0,0,0};      //[Brake, FogF, FogR, Day, IndicR, IndicL, Hazard, Safe]
-uint8_t txData[8];
+uint8_t rxData[8];      //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh, Horn, IndicR, IndicL, Hazard, Safe], first eight bits in first data byte, followed by last four in second data byte
+uint8_t txData[8];      //could be used for status or heartbeat messages to driver controls board, could be left blank otherwise
 uint32_t canRxMailbox;
 uint32_t canTxMailbox;
 uint32_t RXID;
-uint32_t INSERTHERE; //This is a random variable that needs changing of both type and content. Only a dummy as the 0 state for the cyclic switching lights
+int UART_Start_Flag = 1; //Flag to be checked in the while loop for reactivation of UART receive
 //CAN ID for lights
 const int LIGHTS_ID = 0x730;
 /* USER CODE END PV */
@@ -108,8 +108,8 @@ int main(void)
   txHeader.IDE = CAN_ID_STD;
   txHeader.RTR = CAN_RTR_DATA;
   txHeader.StdId = 0x303;
-  txData[0] = 50;
-  txData[1] = 0xAA;
+  txData[0] = 0x3d;
+  txData[1] = 0x4e;
 
   /* USER CODE END Init */
 
@@ -126,18 +126,24 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart2, rxData, 8);
-  HAL_CAN_Start(&hcan);
+  HAL_UART_Receive_IT(&huart2, rxData, 2);
+  // HAL_CAN_Start(&hcan);
+  FullIOReset();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {  
-    if(HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox)!=HAL_OK){
-      Error_Handler();
+    // if(HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox)!=HAL_OK){
+    //   Error_Handler();
+    // }
+    // HAL_Delay(1000);
+    if(UART_Start_Flag == 1){
+      UART_Start_Flag = 0;
+      HAL_UART_Receive_IT(&huart2, rxData, 2);
     }
-    HAL_Delay(1000);
+    uartHeartbeat();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -187,65 +193,92 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
   FullIOReset();                       //Reset all lights for reassignment
-  if(HAL_CAN_GetRxMessage(&hcan, CAN_RX_FIFO0, &rxHeader, rxData) != HAL_OK){
+  if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rxHeader, rxData) != HAL_OK){
     Error_Handler();
   }
-  // else{
-  //   if(){
 
-  //   }
-  //   else if(){
-
-  //   }
-  //   else if(){
-
-  //   }
-  //   else if(){
-
-  //   }
-  //   else if(){
-
-  //   }
-  //   else if(){
-
-  //   }
-  //   else if(){
-
-  //   }
+  if((rxData[0] & 1) != 0){           //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh] [Horn, IndicR, IndicL, Hazard, Safe]
+    Brake();
+  }
+  if((rxData[0] & 2) != 0){
+    FogF();
+  }
+  if((rxData[0] & 4) != 0){
+    FogR();
+  }
+  if((rxData[0] & 8) != 0){
+    Day();
+  }
+  if((rxData[0] & 16) != 0){
+    RearPos();
+  }
+  if((rxData[0] & 32) != 0){
+    Reverse();
+  }
+  if((rxData[0] & 64) != 0){
+    FrontFull();
+  }
+  if((rxData[0] & 128) != 0){
+    FrontHigh();
+  }
+  if((rxData[1] & 1) != 0){
+    Horn();
+  }
+  if((rxData[1] & 2) != 0||(rxData[1] & 4) != 0||(rxData[6] & 16) != 0||(rxData[7] & 32) != 0){
+    HAL_TIM_Base_Start_IT(&htim2);
+  }
   }
 //repeat above for UART interrupts for bench testing without proper CAN system and knowledge of data and addresses
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+    UART_Start_Flag = 0;
     FullIOReset();                       //Reset all pinstates for reasignment, should happen fast enough to not cause any major flashing of lighs
-    if(rxData[0] == 1){
+    if((rxData[0] & 1) != 0){           //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh] [Horn, IndicR, IndicL, Hazard, Safe]
       Brake();
     }
-    if(rxData[1] == 1){
+    if((rxData[0] & 2) != 0){
       FogF();
     }
-    if(rxData[2] == 1){
+    if((rxData[0] & 4) != 0){
       FogR();
     }
-    if(rxData[3] == 1){
+    if((rxData[0] & 8) != 0){
       Day();
     }
-    if(rxData[4] == 1||rxData[5] == 1||rxData[6] == 1||rxData[7] == 1){
+    if((rxData[0] & 16) != 0){
+      RearPos();
+    }
+    if((rxData[0] & 32) != 0){
+      Reverse();
+    }
+    if((rxData[0] & 64) != 0){
+      FrontFull();
+    }
+    if((rxData[0] & 128) != 0){
+      FrontHigh();
+    }
+    if((rxData[1] & 1) != 0){
+      Horn();
+    }
+    if((rxData[1] & 2) != 0||(rxData[1] & 4) != 0||(rxData[6] & 16) != 0||(rxData[7] & 32) != 0){
       HAL_TIM_Base_Start_IT(&htim2);
     }
-  HAL_UART_Receive_IT(&huart2, rxData, 8);
+  UART_Start_Flag = 1;
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
-      if(rxData[4] == 1||rxData[6] == 1){
+      if((rxData[1] & 2) != 0||(rxData[1] & 8) != 0){
         HAL_GPIO_TogglePin(RINDIC_GPIO_Port, RINDIC_Pin);
       } 
-      if(rxData[5] == 1||rxData[6] == 1){
+      if((rxData[1] & 4) != 0||(rxData[1] & 8) != 0){
         HAL_GPIO_TogglePin(LINDIC_GPIO_Port, LINDIC_Pin);
       }
-      if(rxData[7] == 1){
+      if((rxData[1] & 16) != 0){
         HAL_GPIO_TogglePin(SAFELIGHT_GPIO_Port, SAFELIGHT_Pin);
       }
 }
 
+
+//function to set all of the GPIO pins individually and make other functions more readable
 void Brake(){
 HAL_GPIO_WritePin(BRAKE_GPIO_Port, BRAKE_Pin, SET);
 }
@@ -266,7 +299,6 @@ void FogR(){
 HAL_GPIO_WritePin(REARFOG_GPIO_Port, REARFOG_Pin, SET);
 }
 
-
 void FogRR(){
 HAL_GPIO_WritePin(REARFOG_GPIO_Port, REARFOG_Pin, RESET);
 }
@@ -275,23 +307,76 @@ void Day(){
 HAL_GPIO_WritePin(FRONTDAY_GPIO_Port, FRONTDAY_Pin, SET);
 }
 
-
 void DayR(){
 HAL_GPIO_WritePin(FRONTDAY_GPIO_Port, FRONTDAY_Pin, RESET);
 }
 
+void RearPos(){
+  HAL_GPIO_WritePin(REARPOS_GPIO_Port, REARPOS_Pin, SET);
+}
+
+void RearPosR(){
+  HAL_GPIO_WritePin(REARPOS_GPIO_Port, REARPOS_Pin, RESET);
+}
+
+void Horn(){
+  HAL_GPIO_WritePin(HORN_GPIO_Port, HORN_Pin, SET);
+}
+
+void HornR(){
+  HAL_GPIO_WritePin(HORN_GPIO_Port, HORN_Pin, RESET);
+}
+
+void Reverse(){
+  HAL_GPIO_WritePin(REVERSE_GPIO_Port, REVERSE_Pin, SET);
+}
+
+void ReverseR(){
+  HAL_GPIO_WritePin(REVERSE_GPIO_Port, REVERSE_Pin, RESET);
+}
+
+void FrontFull(){
+  HAL_GPIO_WritePin(FRONTFULL_GPIO_Port, FRONTFULL_Pin, SET);
+}
+
+void FrontFullR(){
+  HAL_GPIO_WritePin(FRONTFULL_GPIO_Port, FRONTFULL_Pin, RESET);
+}
+
+void FrontHigh(){
+  HAL_GPIO_WritePin(FRONTHIGH_GPIO_Port, FRONTHIGH_Pin, SET);
+}
+
+void FrontHighR(){
+  HAL_GPIO_WritePin(FRONTHIGH_GPIO_Port, FRONTHIGH_Pin, RESET);
+}
 
 
-void FullIOReset(){
+void FullIOReset(){                       //function to fully reset all GPIO pins used for the lights
   DayR();
   FogRR();
   FogFR();
   BrakeR();
+  FrontHighR();
+  FrontFullR();
+  ReverseR();
+  HornR();
+  RearPosR();
   HAL_TIM_Base_Stop_IT(&htim2);
+  HAL_GPIO_WritePin(SAFELIGHT_GPIO_Port,SAFELIGHT_Pin, RESET);
+  HAL_GPIO_WritePin(RINDIC_GPIO_Port, RINDIC_Pin, RESET);
+  HAL_GPIO_WritePin(LINDIC_GPIO_Port, LINDIC_Pin, RESET);
 }
 
 void heartbeat(){
   if (HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox) != HAL_OK){
+    Error_Handler();
+  }
+  HAL_Delay(250);
+}
+
+void uartHeartbeat(){
+  if(HAL_UART_Transmit(&huart2, &txData[0], 1, 100) != HAL_OK){
     Error_Handler();
   }
   HAL_Delay(250);
