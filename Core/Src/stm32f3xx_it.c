@@ -206,7 +206,7 @@ void SysTick_Handler(void)
 void CAN_RX0_IRQHandler(void)
 {
   /* USER CODE BEGIN CAN_RX0_IRQn 0 */
-
+  HAL_CAN_RxFifo0MsgPendingCallback(&hcan);
   /* USER CODE END CAN_RX0_IRQn 0 */
   HAL_CAN_IRQHandler(&hcan);
   /* USER CODE BEGIN CAN_RX0_IRQn 1 */

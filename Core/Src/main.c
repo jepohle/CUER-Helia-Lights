@@ -46,16 +46,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-CAN_RxHeaderTypeDef rxHeader;
-CAN_TxHeaderTypeDef txHeader;
-uint8_t rxData[8];      //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh, Horn, IndicR, IndicL, Hazard, Safe], first eight bits in first data byte, followed by last four in second data byte
-uint8_t txData[8];      //could be used for status or heartbeat messages to driver controls board, could be left blank otherwise
-uint32_t canRxMailbox;
-uint32_t canTxMailbox;
-uint32_t RXID;
-int UART_Start_Flag = 1; //Flag to be checked in the while loop for reactivation of UART receive
-//CAN ID for lights
-const int LIGHTS_ID = 0x730;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,7 +56,18 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+CAN_RxHeaderTypeDef rxHeader;
+CAN_TxHeaderTypeDef txHeader;
+uint8_t rxData[8];      //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh, Horn, IndicR, IndicL, Hazard, Safe], first eight bits in first data byte, followed by last four in second data byte
+uint8_t txData[8];      //could be used for status or heartbeat messages to driver controls board, could be left blank otherwise
+uint32_t canRxMailbox;
+uint32_t canTxMailbox;
+uint32_t RXID;
+int UART_Start_Flag = 1; //Flag to be checked in the while loop for reactivation of UART receive
+int i = 0;
+//CAN ID for lights
+const int LIGHTS_ID = 0x730;
+int RxFlag = 0;
 /* USER CODE END 0 */
 
 /**
@@ -85,29 +86,25 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  HAL_CAN_Start(&hcan);
-  HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
-
+  
   //initialise CAN filters
   CAN_FilterTypeDef canfil;
-  canfil.FilterActivation = CAN_FILTER_ENABLE;
-  canfil.FilterBank = 0;
-  canfil.FilterMode = CAN_FILTERMODE_IDMASK;
-  canfil.FilterFIFOAssignment = CAN_RX_FIFO0;
-  canfil.FilterIdHigh = 0;
-  canfil.FilterIdLow = 0;
   canfil.FilterMaskIdHigh = 0;
   canfil.FilterMaskIdLow = 0;
-  canfil.FilterScale = CAN_FILTERSCALE_32BIT;
+  canfil.FilterIdHigh = 0;
+  canfil.FilterIdLow = 0;
+  canfil.FilterBank = 1;
+  canfil.FilterFIFOAssignment = CAN_FILTER_FIFO0;
+  canfil.FilterMode = CAN_FILTERMODE_IDMASK;
+  canfil.FilterScale = CAN_FILTERSCALE_16BIT;
   canfil.FilterActivation = ENABLE;
-  canfil.SlaveStartFilterBank = 14;
   HAL_CAN_ConfigFilter(&hcan, &canfil);
 
   //setup CAN header for transmitting messages
   txHeader.DLC = 2; // Number of bytes to be transmitted max- 8
   txHeader.IDE = CAN_ID_STD;
   txHeader.RTR = CAN_RTR_DATA;
-  txHeader.StdId = 0x303;
+  txHeader.StdId = 0x400;
   txData[0] = 0x3d;
   txData[1] = 0x4e;
 
@@ -126,9 +123,11 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart2, rxData, 2);
-  // HAL_CAN_Start(&hcan);
+  // HAL_UART_Receive_IT(&huart2, rxData, 2);
   FullIOReset();
+  HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
+  HAL_CAN_Start(&hcan);
+ 
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -139,11 +138,21 @@ int main(void)
     //   Error_Handler();
     // }
     // HAL_Delay(1000);
-    if(UART_Start_Flag == 1){
-      UART_Start_Flag = 0;
-      HAL_UART_Receive_IT(&huart2, rxData, 2);
+    // if(UART_Start_Flag == 1){
+    //   UART_Start_Flag = 0;
+    //   HAL_UART_Receive_IT(&huart2, rxData, 2);
+    // }
+    for(i=0;i<=5;i++){
+    heartbeat();
     }
-    uartHeartbeat();
+    txHeader.DLC = 1;
+    txHeader.StdId = 0x34F;
+    txData[1]=0;
+    txData[0]=0xff;
+    if(HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox) != HAL_OK){
+      Error_Handler();
+    }
+    txHeader.StdId = 0x400;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -192,11 +201,15 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
-  FullIOReset();                       //Reset all lights for reassignment
   if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rxHeader, rxData) != HAL_OK){
     Error_Handler();
   }
-
+  if(HAL_CAN_AddTxMessage(hcan, &txHeader, rxData, &canTxMailbox) != HAL_OK){
+    Error_Handler();
+  }
+}
+void LightsRefresh(uint8_t rxData[]){
+  FullIOReset();
   if((rxData[0] & 1) != 0){           //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh] [Horn, IndicR, IndicL, Hazard, Safe]
     Brake();
   }
@@ -229,41 +242,41 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan){
   }
   }
 //repeat above for UART interrupts for bench testing without proper CAN system and knowledge of data and addresses
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-    UART_Start_Flag = 0;
-    FullIOReset();                       //Reset all pinstates for reasignment, should happen fast enough to not cause any major flashing of lighs
-    if((rxData[0] & 1) != 0){           //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh] [Horn, IndicR, IndicL, Hazard, Safe]
-      Brake();
-    }
-    if((rxData[0] & 2) != 0){
-      FogF();
-    }
-    if((rxData[0] & 4) != 0){
-      FogR();
-    }
-    if((rxData[0] & 8) != 0){
-      Day();
-    }
-    if((rxData[0] & 16) != 0){
-      RearPos();
-    }
-    if((rxData[0] & 32) != 0){
-      Reverse();
-    }
-    if((rxData[0] & 64) != 0){
-      FrontFull();
-    }
-    if((rxData[0] & 128) != 0){
-      FrontHigh();
-    }
-    if((rxData[1] & 1) != 0){
-      Horn();
-    }
-    if((rxData[1] & 2) != 0||(rxData[1] & 4) != 0||(rxData[6] & 16) != 0||(rxData[7] & 32) != 0){
-      HAL_TIM_Base_Start_IT(&htim2);
-    }
-  UART_Start_Flag = 1;
-}
+// void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+//     UART_Start_Flag = 0;
+//     FullIOReset();                       //Reset all pinstates for reasignment, should happen fast enough to not cause any major flashing of lighs
+//     if((rxData[0] & 1) != 0){           //[Brake, FogF, FogR, Day, RearPos, Reverse, FrontFull, FrontHigh] [Horn, IndicR, IndicL, Hazard, Safe]
+//       Brake();
+//     }
+//     if((rxData[0] & 2) != 0){
+//       FogF();
+//     }
+//     if((rxData[0] & 4) != 0){
+//       FogR();
+//     }
+//     if((rxData[0] & 8) != 0){
+//       Day();
+//     }
+//     if((rxData[0] & 16) != 0){
+//       RearPos();
+//     }
+//     if((rxData[0] & 32) != 0){
+//       Reverse();
+//     }
+//     if((rxData[0] & 64) != 0){
+//       FrontFull();
+//     }
+//     if((rxData[0] & 128) != 0){
+//       FrontHigh();
+//     }
+//     if((rxData[1] & 1) != 0){
+//       Horn();
+//     }
+//     if((rxData[1] & 2) != 0||(rxData[1] & 4) != 0||(rxData[6] & 16) != 0||(rxData[7] & 32) != 0){
+//       HAL_TIM_Base_Start_IT(&htim2);
+//     }
+//   UART_Start_Flag = 1;
+// }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
       if((rxData[1] & 2) != 0||(rxData[1] & 8) != 0){
@@ -372,15 +385,15 @@ void heartbeat(){
   if (HAL_CAN_AddTxMessage(&hcan, &txHeader, txData, &canTxMailbox) != HAL_OK){
     Error_Handler();
   }
-  HAL_Delay(250);
+  HAL_Delay(1000);
 }
 
-void uartHeartbeat(){
-  if(HAL_UART_Transmit(&huart2, &txData[0], 1, 100) != HAL_OK){
-    Error_Handler();
-  }
-  HAL_Delay(250);
-}
+// void uartHeartbeat(){
+//   if(HAL_UART_Transmit(&huart2, &txData[0], 1, 100) != HAL_OK){
+//     Error_Handler();
+//   }
+//   HAL_Delay(250);
+// }
 /* USER CODE END 4 */
 
 /**
