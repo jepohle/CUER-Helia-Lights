@@ -237,7 +237,7 @@ void LightsRefresh(uint8_t rxData[]){
   if((rxData[1] & 1) != 0){
     Horn();
   }
-  if((rxData[1] & 2) != 0||(rxData[1] & 4) != 0||(rxData[6] & 16) != 0||(rxData[7] & 32) != 0){
+  if((rxData[1] & 2) != 0||(rxData[1] & 4) != 0||(rxData[1] & 16) != 0||(rxData[1] & 32) != 0){
     HAL_TIM_Base_Start_IT(&htim2);
   }
   }
